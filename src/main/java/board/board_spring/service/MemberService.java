@@ -4,6 +4,7 @@ import board.board_spring.domain.Member;
 import board.board_spring.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,6 +13,7 @@ import java.util.Optional;
 // - 서비스의 역할은 실제 비즈니스 로직을 처리하는 것이다.
 // - 따라서 클래스명과 메서드명은 기술적인 용어보다 비즈니스 도메인에 가까운 용어를 사용하는 것이 좋다.
 @Service
+@Transactional
 public class MemberService {
 
     private final MemberRepository memberRepository;
