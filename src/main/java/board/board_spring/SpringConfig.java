@@ -18,23 +18,31 @@ public class SpringConfig {
 //        this.dataSource = dataSource;
 //    }
 
-    private EntityManager entityManager;
+//    4.
+//    private EntityManager entityManager;
+//
+//    @Autowired
+//    public SpringConfig(EntityManager entityManager) {
+//        this.entityManager = entityManager;
+//    }
+
+    private final MemberRepository memberRepository;
 
     @Autowired
-    public SpringConfig(EntityManager entityManager) {
-        this.entityManager = entityManager;
+    public SpringConfig(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
     }
 
     @Bean
     public MemberService memberService() {
-        return new MemberService(memberRepository());
+        return new MemberService(memberRepository);
     }
 
-    @Bean
-    public MemberRepository memberRepository() {
-        // 1. return new MemoryMemberRepository();
-        // 2. return new JdbcMemberRepository(dataSource);
-        // 3. return new JdbcTemplateMemberRepository(dataSource);
-        return new JpaMemberRepository(entityManager);
-    }
+//    @Bean
+//    public MemberRepository memberRepository() {
+//        // 1. return new MemoryMemberRepository();
+//        // 2. return new JdbcMemberRepository(dataSource);
+//        // 3. return new JdbcTemplateMemberRepository(dataSource);
+//        // 4. return new JpaMemberRepository(entityManager);
+//    }
 }
