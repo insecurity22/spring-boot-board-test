@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>주문/할인 확인</title>
+</head>
+<body>
+
+<div>
+    <h2>주문 생성</h2>
+
+    <form action="/orders/new" method="post">
+        <div>
+            <label>회원 ID</label>
+            <input type="number" name="memberId" placeholder="회원 ID">
+        </div>
+
+        <div>
+            <label>상품명</label>
+            <input type="text" name="itemName" placeholder="상품명">
+        </div>
+
+        <div>
+            <label>상품 가격</label>
+            <input type="number" name="itemPrice" placeholder="상품 가격">
+        </div>
+
+        <button type="submit">주문하기</button>
+    </form>
+
+</div>
+
+</body>
+</html>

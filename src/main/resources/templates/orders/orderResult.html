@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>주문 결과</title>
+</head>
+<body>
+
+<h2>주문 결과</h2>
+
+<table border="1">
+    <tr>
+        <th>회원 ID</th>
+        <td th:text="${order.memberId}"></td>
+    </tr>
+    <tr>
+        <th>상품명</th>
+        <td th:text="${order.itemName}"></td>
+    </tr>
+    <tr>
+        <th>상품 가격</th>
+        <td th:text="${order.itemPrice}"></td>
+    </tr>
+    <tr>
+        <th>할인 금액</th>
+        <td th:text="${order.discountPrice}"></td>
+    </tr>
+    <tr>
+        <th>최종 결제 금액</th>
+        <td th:text="${order.calculatePrice()}"></td>
+    </tr>
+</table>
+
+<br>
+
+<a href="/orders/new">다시 주문하기</a>
+
+</body>
+</html>
